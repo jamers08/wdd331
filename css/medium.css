@@ -1,0 +1,22 @@
+@media only screen and (min-width: 32.5em) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    header, footer {
+        border-radius: 50px 50px 50px 50px;
+        display: grid;
+    }
+
+    header img {
+        border-radius: 50px 50px 50px 50px;
+    }
+
+    ul {
+        margin-left: 200px;
+    }
+}
