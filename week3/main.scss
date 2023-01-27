@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import "mixin";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*****FONT*****/
+$font-stack: Helvetica, Arial, sans-serif;
+$small-font: .8rem;
+$medium-font: 1rem;
+$large-font: 1.2rem;
+$xlarge-font: 3rem;
+
+/*****COLORS*****/
+$font-color: #333;
+$link-color: #666;
+$hover-color: #00ddff;
+$active-color: #DEB887;
+$border: 1.5px solid #d0d0d0;
+
+/*****IMAGES*****/
+$small-image: 200px;
+$large-image: 225px;
+
+body {
+    margin: 0 auto;
+    max-width: 600px;
+    font-family: Helvetica, Arial, sans-serif;
+    color: $font-color;
+    font-weight: 600;
+}
+
+h1, h2, li, .post-date {
+    font-family: 'Lora', serif;
+}
+/*****NESTING*****/
+h1 {
+    text-align: center;
+    font-size: $xlarge-font;
+    padding:30px 30px;
+
+    a {
+        color: $font-color;
+
+        &:visited {
+            color: $font-color;
+        }
+
+        &:hover {
+            color: $font-color;
+        }
+    }
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:visited {
+        color: $link-color;
+    }
+
+    &:active {
+        color: $active-color;
+    }
+    
+    &:hover {
+        color: $hover-color;
+    }
+}
+
+h2 {
+    font-size: $large-font;
+}
+
+.post-date {
+    font-size: $large-font;
+}
+
+li {
+    text-align: center;
+    padding: 10px;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: $medium-font;
+    font-weight: 500;
+}
+
+nav {
+    border-top: $border;
+    border-bottom: $border;
+}
+
+.post-date {
+    text-transform: uppercase;
+    text-align: right;
+    border-top: $border;
+    border-bottom: $border;
+    padding: 50px 15px 15px;
+}
+
+figure {
+    text-align: center;
+    padding: 25px;
+}
+
+img {
+    width: $large-image;
+}
+
+section {
+    padding: 30px 15px 15px 15px;
+}
+
+p {
+    font-weight: 600;
+    font-size: $small-font;
+}
+
+/*****Large View*****/
+@media only screen and (min-width: 600px) {
+    ul {
+        display: flex;
+        justify-content: right;
+    }
+
+    article {
+        @include article-grid;
+    }
+
+    img {
+        width: $small-image;
+    }
+
+    .post-date, h2 {
+        border-top: none;
+        border-bottom: none;
+    }
+
+    nav {
+        margin-bottom: 15px;
+    }
+
+    section {
+        border-bottom: $border;
+        border-left: $border;
+        padding: 30px 5px 25px 15px;
+    }
+}
