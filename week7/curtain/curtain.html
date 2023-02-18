@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Curtain</title>
+    <link rel="stylesheet" href="curtain.css">
+</head>
+<body>
+
+<div class="curtain">       <!-- The parent component -->
+    <div class="curtain__wrapper">      <!-- The component wrapper -->
+        <input type="checkbox" checked>     <!-- The checkbox hack! -->
+        
+        <div class="curtain__panel curtain__panel--left">     <!-- The left curtain panel -->
+        <h1>Click to reveal&nbsp;</h1>
+        </div>        <!-- curtain__panel -->
+
+        <div class="curtain__content">      <!-- The prize behind the curtain panels -->
+        <img src="cake.jpg" alt="Cake Prize">
+        <h2>Mmmmm! Cake! Click again if this looks too delicious.</h2>
+        </div>        <!-- curtain__prize -->
+
+        <div class="curtain__panel curtain__panel--right">        <!-- The right curtain panel -->
+        <h1>a yummy reward...</h1>
+        </div>        <!-- curtain__panel -->
+    </div>      <!-- curtain__wrapper -->
+</div>      <!-- curtain -->
+
+</body>
+</html>
