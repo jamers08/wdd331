@@ -59,7 +59,7 @@
 
 @mixin heading-colors2 {
   color: $accent1;
-  background-color: $text-light;
+  background: rgba($background-color, .25);
 }
 
 @mixin heading-colors3 {

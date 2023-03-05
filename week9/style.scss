@@ -1,0 +1,172 @@
+$background: white;
+$accent1: navy;
+$accent2: grey;
+$text: black;
+$font-large: 50px;
+$font-small: 24px;
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+// HAMBURGER ICON
+
+.hamburger_icon {
+    width: 41px;
+    height: 22px;
+    position: fixed;
+    z-index: 100;
+    margin: 20px;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.5);
+    }
+
+    span {
+        display: block;
+        position: relative;
+        height: 4px;
+        width: 100%;
+        background: $accent1;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+
+        &.top {
+            top: 0px;
+            transform-origin: left center;
+        }
+
+        &.middle {
+            top: 10px;
+            transform-origin: left center;
+        }
+
+        &.bottom {
+            top: 20px;
+            transform-origin: left center;
+        }
+    }
+
+    &.open span{
+
+        &.top {
+            transform: rotate(45deg);
+            top: -3px;
+            left: 2px;
+        }
+
+        &.middle {
+            width: 0%;
+            opacity: 0;
+        }
+
+        &.bottom {
+            transform: rotate(-45deg);
+            top: 18px;
+            left: 0px;
+        }
+    }
+}
+
+// NAVIGATION BAR
+
+@keyframes slideIn {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+
+    100% {
+        width: 50%;
+        opacity: 1;
+    }
+}
+
+nav {
+    background: $accent2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    z-index: 10;
+    opacity: 0;
+    
+    transition: all 600ms cubic-bezier(.62,.04,.3,1.56);
+    transition-delay: 100ms;
+    ul {
+        margin: 0;
+        position: absolute;
+        top: 15%;
+        left: 40%;
+
+        li {
+            list-style: none;
+            font-size: $font-small;
+            color: $background;
+            line-height: 2.5;
+            text-align: right;
+            
+            &:hover {
+                transition: .2s linear;
+                color: $accent1
+            }
+        }
+    }
+    
+    &.show {
+        width: 30%;
+        opacity: 1;
+    }
+}
+
+// CURTAIN
+
+.curtain {
+    background: $accent1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    z-index: 5;
+    opacity: 1;
+    transition: all 500ms cubic-bezier(.62,.04,.3,1.8);
+    transition-delay: 50ms;
+    &.slide {
+        width: 30.5%;
+        opacity: 1;
+    }
+
+}
+
+// CONTENT
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    transition: 1s ease-in;
+    opacity: 100%;
+
+    &.transparent {
+        transition: 1s ease-out;
+        opacity: 25%;
+    }
+
+    h1 {
+        font-size: $font-large;
+    }
+
+    p {
+        font-size: $font-small;
+    }
+}

@@ -96,7 +96,10 @@ ul {
 }
 
 html {
-  background: linear-gradient(#a6b2b5, #2f3d4c);
+  background: url(images/mountain_background.png), linear-gradient(#a6b2b5, #2f3d4c);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   padding: 5%;
 }
 
@@ -104,13 +107,11 @@ body {
   font-family: "Raleway", Arial, sans-serif;
   font-size: 85%;
   color: #333;
-  background-color: #c7a485;
   margin: 0;
   padding: 1em;
 }
 
 section {
-  background-color: white;
   padding: 1em;
   margin: 1em;
 }
@@ -187,12 +188,101 @@ section {
   margin: 0;
   padding: 0;
   color: #924e3c;
-  background-color: #fff;
+  background: rgba(238, 239, 234, 0.25);
+  padding: 10px;
+  vertical-align: bottom;
+}
+
+div.sun-container {
+  width: 100%;
+}
+
+div.sun {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: yellow;
+  animation: sunanimation 10s linear infinite;
+  margin: 50px;
+}
+
+@keyframes sunanimation {
+  0% {
+    transform: translate(0px, 100px);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(350px, 0px);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(700px, -50px);
+  }
+  75% {
+    transform: translate(1050px, 0px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(1400px, 100px);
+    opacity: 0;
+  }
+}
+div.preamble::before {
+  content: "";
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  background: yellow;
+  opacity: 25%;
+  transform: translateY(0px);
+  animation-iteration-count: infinite;
+  position: absolute;
+  margin: 50px;
+  z-index: -1;
 }
 
 div.zen-resources:last-of-type::after {
   white-space: pre-wrap;
   content: "CSS Design by Timothy Bohman, Urias Miranda, and Jamie Stott." "\a" "Mountain icons created by Freepik - Flaticon (https://www.flaticon.com/free-icons/mountain).";
+}
+
+.page-wrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 10px;
+}
+.page-wrapper .intro {
+  grid-column: 1/3;
+}
+.page-wrapper .main {
+  grid-column: 1/2;
+  grid-row: 2/4;
+  display: grid;
+  grid-template-columns: repeat(3, fit-content);
+  grid-template-rows: repeat(5, max-content);
+  background-color: #2f3d4c;
+}
+.page-wrapper .main p {
+  color: white;
+}
+.page-wrapper .main div {
+  padding: 10px;
+}
+.page-wrapper .main .explanation {
+  grid-column: 1/3;
+}
+.page-wrapper .main .participation {
+  grid-column: 2/4;
+}
+.page-wrapper .main .benefits {
+  grid-column: 1/3;
+}
+.page-wrapper .main .requirements {
+  grid-column: 2/4;
+}
+.page-wrapper .sidebar {
+  grid-column: 2/3;
+  grid-row: 2/3;
 }
 
 /*# sourceMappingURL=style.css.map */
