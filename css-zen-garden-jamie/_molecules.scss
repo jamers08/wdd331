@@ -22,7 +22,15 @@
   }
   .preamble h3 {
     background-color: transparent;
-    // text-shadow: 2px 2px $text-dark;
+    text-shadow: 3px 3px 5px darkslategray, 0 0 2rem white, 0 0 2rem white, 0 0 2rem white;
+  }
+  
+.preamble>h3 {
+    @include atoms.heading-style1;
+    @include atoms.heading-colors2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    vertical-align: bottom;  
   }
 }
 
