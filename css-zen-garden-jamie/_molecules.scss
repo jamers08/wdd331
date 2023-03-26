@@ -6,8 +6,7 @@
 
 .intro {
   color: black;
-  background-color: rgb(255, 255, 255, 0.65);
-  // background: linear-gradient(rgb(255, 255, 255, 0.3), rgb(255, 255, 255, 0.6));
+  background-color: rgb(255, 255, 255, 0.3);
   width:fit-content;
   a {
     border-bottom: 2px solid rgb(51, 51, 51, 0.5);
@@ -21,16 +20,11 @@
     color: $link-highlight2;
   }
   .preamble h3 {
-    background-color: transparent;
-    text-shadow: 3px 3px 5px darkslategray, 0 0 2rem white, 0 0 2rem white, 0 0 2rem white;
-  }
-  
-.preamble>h3 {
     @include atoms.heading-style1;
-    @include atoms.heading-colors2;
+    @include atoms.heading-colors4;
     padding-top: 10px;
     padding-bottom: 10px;
-    vertical-align: bottom;  
+    vertical-align: bottom;
   }
 }
 
@@ -64,3 +58,32 @@
     padding-top: 0;
     margin-top: 0;
   }
+
+  
+@media (max-width: 1249px) {
+  .sidebar {
+    margin-right: 0;
+  }
+
+  h3, .intro .preamble h3 {
+    @include atoms.small-heading;
+  }
+
+  .intro .preamble h3 {
+    text-align: center;
+    margin-top: .6em;
+    margin-bottom: .25em;
+  }
+
+  h1, h2 {
+    @include atoms.small-heading2;
+  }
+
+  .participation h3, .benefits h3, .requirements h3 {
+    margin-top: .5em;
+  }
+  .intro header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
